@@ -6,12 +6,34 @@ Links: **[ilw-image-gallery in Builder](https://builder3.toolkit.illinois.edu/co
 
 ## Overview
 
-A 1-3 paragraph explanation of what the component does and how it presents.
+The image gallery provides a thumbnail display of images in a grid. When you click on an image, a modal will open to display the image larger and allow you to advance to the next image.
 
 ## Code Examples
 
 ```html
-<ilw-image-gallery></ilw-image-gallery>
+<ilw-image-gallery>
+ <ilw-grid>
+    <a
+      data-gallery-item
+      href="/images/photo-1-large.jpg"
+      data-gallery-alt="A boathouse beside the lake at night"
+    >
+      <ilw-card aspectratio="4/3">
+        <img
+          slot="image"
+          src="/images/photo-1-thumbnail.jpg"
+          alt=""
+          width="570"
+          height="428"
+        >
+        <p>Boathouse at night</p>
+      </ilw-card>
+    </a>
+
+    <!-- Additional items -->
+  </ilw-grid>
+
+</ilw-image-gallery>
 ```
 
 ## Accessibility Notes and Use
