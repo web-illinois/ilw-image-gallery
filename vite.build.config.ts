@@ -6,9 +6,9 @@ export default defineConfig({
     build: {
         outDir: "../dist/cdn",
         lib: {
-            name: "<%= name %>",
-            entry: "<%= name %>.ts",
-            fileName: "<%= name %>",
+            name: "ilw-image-gallery",
+            entry: "ilw-image-gallery.ts",
+            fileName: "ilw-image-gallery",
             formats: ["es"],
         },
         rollupOptions: {
