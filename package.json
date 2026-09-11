@@ -1,6 +1,6 @@
 {
     "name": "@illinois-toolkit/ilw-image-gallery",
-    "description": "One paragraph description of the component.",
+    "description": "An image gallery with modal viewing and previous/next navigation.",
     "repository": "github:web-illinois/ilw-image-gallery",
     "private": false,
     "license": "MIT",
@@ -34,16 +34,19 @@
         "test:browser": "vitest watch --browser chromium"
     },
     "dependencies": {
+        "@illinois-toolkit/ilw-card": "^1.3.0",
+        "@illinois-toolkit/ilw-grid": "^1.2.1",
+        "@illinois-toolkit/ilw-modal": "^1.2.1",
         "lit": "3.1.3"
     },
     "devDependencies": {
         "@illinois-toolkit/ilw-core": "^1.0.2",
         "@playwright/test": "^1.54.1",
         "@vitest/browser": "^3.2.4",
-        "vitest-browser-lit": "^0.1.0",
         "playwright": "^1.54.1",
         "typescript": "^5.9.2",
         "vite": "^7.1.3",
-        "vite-plugin-dts": "^4.5.4"
+        "vite-plugin-dts": "^4.5.4",
+        "vitest-browser-lit": "^0.1.0"
     }
 }
