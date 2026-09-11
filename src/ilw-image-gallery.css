@@ -1,0 +1,12 @@
+@layer base {
+    ilw-image-gallery [data-gallery-item] {
+        display: block;
+        color: inherit;
+        text-decoration: none;
+    }
+
+    ilw-image-gallery [data-gallery-item]:focus-visible {
+        outline: 3px solid var(--ilw-color--focus--outline, var(--il-orange, #ff5f05));
+        outline-offset: 3px;
+    }
+}

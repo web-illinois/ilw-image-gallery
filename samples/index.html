@@ -10,8 +10,34 @@
     <script type="module" src="/src/ilw-image-gallery.ts"></script>
 </head>
 
-<body style="margin: 0; padding: 0;">
-<ilw-image-gallery></ilw-image-gallery>
+<body style="margin: 0 auto; padding: 2rem 0;">
+    <ilw-image-gallery label="Campus photo gallery">
+        <ilw-grid width="page">
+            <a data-gallery-item href="https://picsum.photos/id/13/2500/1667"
+                data-gallery-alt="A beach with pine trees in the distance">
+                <ilw-card aspectratio="16/10">
+                    <img src="https://picsum.photos/id/13/570/300" alt="" slot="image">
+                    <p>A beach with pine trees in the distance</p>
+                </ilw-card>
+            </a>
+
+            <a data-gallery-item href="https://picsum.photos/id/16/2500/1667"
+                data-gallery-alt="A rocky shoreline beneath a cloudy sky">
+                <ilw-card aspectratio="16/10">
+                    <img src="https://picsum.photos/id/16/570/300" alt="" slot="image">
+                    <p>A rocky shoreline beneath a cloudy sky</p>
+                </ilw-card>
+            </a>
+
+            <a data-gallery-item href="https://picsum.photos/id/18/2500/1667"
+                data-gallery-alt="Tall grass overlooking the ocean">
+                <ilw-card aspectratio="16/10">
+                    <img src="https://picsum.photos/id/18/570/300" alt="" slot="image">
+                    <p>Tall grass overlooking the ocean</p>
+                </ilw-card>
+            </a>
+        </ilw-grid>
+    </ilw-image-gallery>
 </body>
 
 </html>

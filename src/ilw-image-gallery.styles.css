@@ -1,9 +1,85 @@
-/* Styleable variables are in the base layer so they can be overridden easily */
+/* Styleable variables are in the base layer so they can be overridden easily. */
 @layer base {
     :host {
-
+        --ilw-image-gallery--button-background: var(--ilw-color--control-accent, var(--il-blue, #13294b));
+        --ilw-image-gallery--button-color: var(--ilw-color--control-accent-text, #fff);
+        --ilw-image-gallery--button-disabled-background: #d7d7d7;
+        --ilw-image-gallery--button-disabled-color: #333;
+        --ilw-image-gallery--image-background: var(--ilw-color--background, #fff);
+        --ilw-image-gallery--image-max-height: calc(80dvh - 12rem);
+        --ilw-image-gallery--modal-width: 900px;
     }
 }
 
 :host {
+    display: block;
+}
+
+.gallery-modal {
+    --ilw-modal--image-height: auto;
+    --ilw-modal--large: var(--ilw-image-gallery--modal-width);
+    --ilw-modal--background: var(--ilw-color--background, #fff);
+    --ilw-modal--text-color: var(--ilw-color--text, #1a1a1a);
+    --ilw-modal--heading-color: var(--ilw-color--heading, var(--il-blue, #13294b));
+    --ilw-modal--border-top: 8px solid var(--ilw-color--control-accent, var(--il-orange, #ff5f05));
+}
+
+.gallery-image {
+    display: block;
+    width: 100%;
+    height: auto !important;
+    max-height: var(--ilw-image-gallery--image-max-height);
+    object-fit: contain !important;
+    background: var(--ilw-image-gallery--image-background);
+}
+
+.gallery-controls {
+    display: grid;
+    grid-template-columns: minmax(7rem, auto) 1fr minmax(7rem, auto);
+    align-items: center;
+    gap: 1rem;
+    padding-top: 0.5rem;
+}
+
+.gallery-controls button {
+    border: 2px solid transparent;
+    border-radius: 0.125rem;
+    padding: 0.75rem 1rem;
+    color: var(--ilw-image-gallery--button-color);
+    background: var(--ilw-image-gallery--button-background);
+    font: 700 1rem var(--il-font-sans, Arial, sans-serif);
+    cursor: pointer;
+}
+
+.gallery-controls button:hover:not(:disabled) {
+    text-decoration: underline;
+}
+
+.gallery-controls button:focus-visible {
+    outline: 3px solid var(--ilw-color--focus--outline, var(--il-orange, #ff5f05));
+    outline-offset: 2px;
+}
+
+.gallery-controls button:disabled {
+    color: var(--ilw-image-gallery--button-disabled-color);
+    background: var(--ilw-image-gallery--button-disabled-background);
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+.gallery-position {
+    margin: 0;
+    text-align: center;
+    font: 700 1rem var(--il-font-sans, Arial, sans-serif);
+}
+
+@media (max-width: 600px) {
+    .gallery-controls {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gallery-position {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
 }

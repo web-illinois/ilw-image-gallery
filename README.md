@@ -6,12 +6,11 @@ Links: **[ilw-image-gallery in Builder](https://builder3.toolkit.illinois.edu/co
 
 ## Overview
 
-The image gallery provides a thumbnail display of images in a grid. When you click on an image, a modal will open to display the image larger and allow you to advance to the next image.
-
+The image gallery provides a thumbnail display of images in a grid. When you click on an image, a modal will open to display the image larger and allow you to advance to the next image. The image gallery uses `ilw-grid` and `ilw-card` for the image thumbnail layout.
 ## Code Examples
 
 ```html
-<ilw-image-gallery>
+<ilw-image-gallery label="Campus photo gallery">
  <ilw-grid>
     <a
       data-gallery-item
@@ -36,15 +35,25 @@ The image gallery provides a thumbnail display of images in a grid. When you cli
 </ilw-image-gallery>
 ```
 
+The full-size image comes from each gallery item's `href`. Use `data-gallery-alt`
+for its alternative text and `data-gallery-caption` when the modal caption should
+differ from the card text. Previous and Next stop at the ends of the gallery.
+
+The gallery creates one shared modal internally. It also supports Left and Right
+Arrow navigation while the modal is open; Escape closes it and returns focus to
+the thumbnail that opened it.
+
+The modal defaults to a maximum width of `900px`. Override
+`--ilw-image-gallery--modal-width` on the gallery when a different maximum is
+needed. Images retain their natural proportions instead of stretching or cropping.
+
 ## Accessibility Notes and Use
 
-Consider accessibility, both for building the component and for its use:
-
-- Is there sufficient color contrast?
-- Can the component be fully understood without colors?
-- Does the component need alt text or ARIA roles?
-- Can the component be navigated with a keyboard? Is the tab order correct?
-- Are focusable elements interactive, and interactive elements focusable?
-- Are form fields, figures, fieldsets and other interactive elements labelled?
+- Give the gallery a concise `label` that identifies the image collection.
+- Use meaningful `data-gallery-alt` text for informative images.
+- Keep the thumbnail image's `alt` empty when the surrounding link and card text
+  already provide its accessible name.
+- Gallery items must be anchors so they remain keyboard accessible and open the
+  full-size image normally when JavaScript is unavailable.
 
 ## External References
