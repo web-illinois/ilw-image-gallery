@@ -43,6 +43,9 @@ The gallery creates one shared modal internally. It also supports Left and Right
 Arrow navigation while the modal is open; Escape closes it and returns focus to
 the thumbnail that opened it.
 
+Inside the modal, each full-size image and its caption are rendered together as a
+semantic `figure` and `figcaption`.
+
 The modal defaults to a maximum width of `900px`. Override
 `--ilw-image-gallery--modal-width` on the gallery when a different maximum is
 needed. Images retain their natural proportions instead of stretching or cropping.

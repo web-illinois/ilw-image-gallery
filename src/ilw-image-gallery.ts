@@ -146,19 +146,24 @@ export default class ImageGallery extends LitElement {
 
             <ilw-modal id=${this.modalId} size="large" class="gallery-modal">
                 ${image ? html`
-                    <img class="gallery-image" src=${image.src} alt=${image.alt} slot="image" />
-                    <h2 slot="title">${image.caption || this.label}</h2>
+                    <figure class="gallery-figure" slot="image">
+                        <img class="gallery-image" src=${image.src} alt=${image.alt} />
+                        ${image.caption
+                            ? html`<figcaption>${image.caption}</figcaption>`
+                            : null}
+                    </figure>
+                    <h2 class="visually-hidden" slot="title">${this.label}</h2>
                 ` : null}
 
                 <div class="gallery-controls">
-                    <button type="button" @click=${this.previous}
+                    <button type="button" class="ilw-button" @click=${this.previous}
                         ?disabled=${atStart} aria-label="Previous image">
                         Previous
                     </button>
                     <p class="gallery-position" aria-live="polite" aria-atomic="true">
                         ${this.currentIndex >= 0 ? `Image ${this.currentIndex + 1} of ${count}` : ""}
                     </p>
-                    <button type="button" @click=${this.next}
+                    <button type="button" class="ilw-button" @click=${this.next}
                         ?disabled=${atEnd} aria-label="Next image">
                         Next
                     </button>

@@ -21,16 +21,43 @@
     --ilw-modal--background: var(--ilw-color--background, #fff);
     --ilw-modal--text-color: var(--ilw-color--text, #1a1a1a);
     --ilw-modal--heading-color: var(--ilw-color--heading, var(--il-blue, #13294b));
-    --ilw-modal--border-top: 8px solid var(--ilw-color--control-accent, var(--il-orange, #ff5f05));
+    --ilw-modal--border-bottom: 8px solid var(--ilw-color--control-accent, var(--il-orange, #ff5f05));
+}
+
+.gallery-figure {
+    width: 100%;
+    height: auto !important;
+    margin: 0;
+    background: var(--ilw-image-gallery--image-background);
 }
 
 .gallery-image {
     display: block;
     width: 100%;
     height: auto !important;
-    max-height: var(--ilw-image-gallery--image-max-height);
+    /*max-height: var(--ilw-image-gallery--image-max-height);*/
     object-fit: contain !important;
     background: var(--ilw-image-gallery--image-background);
+    border-bottom: var(--ilw-modal--border-bottom);
+}
+
+.gallery-figure figcaption {
+    padding: 1rem 1.5rem 0;
+    color: var(--ilw-color--text, #1a1a1a);
+    background: var(--ilw-modal--background, #fff);
+    font: 700 1.25rem/1.4 var(--il-font-sans, Arial, sans-serif);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 .gallery-controls {
