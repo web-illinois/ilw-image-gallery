@@ -21,6 +21,7 @@
     --ilw-modal--background: var(--ilw-color--background, #fff);
     --ilw-modal--text-color: var(--ilw-color--text, #1a1a1a);
     --ilw-modal--heading-color: var(--ilw-color--heading, var(--il-blue, #13294b));
+    --ilw-modal--border-top: 0;
     --ilw-modal--border-bottom: 8px solid var(--ilw-color--control-accent, var(--il-orange, #ff5f05));
 }
 
@@ -42,10 +43,10 @@
 }
 
 .gallery-figure figcaption {
-    padding: 1rem 1.5rem 0;
+    padding: 1rem 1.5rem .5rem 1.5rem;
     color: var(--ilw-color--text, #1a1a1a);
     background: var(--ilw-modal--background, #fff);
-    font: 700 1.25rem/1.4 var(--il-font-sans, Arial, sans-serif);
+    font: 400 1.125rem/1.667rem var(--il-font-sans);
 }
 
 .visually-hidden {
@@ -68,36 +69,51 @@
     padding-top: 0.5rem;
 }
 
-.gallery-controls button {
-    border: 2px solid transparent;
-    border-radius: 0.125rem;
-    padding: 0.75rem 1rem;
-    color: var(--ilw-image-gallery--button-color);
-    background: var(--ilw-image-gallery--button-background);
-    font: 700 1rem var(--il-font-sans, Arial, sans-serif);
+/* The global .ilw-button stylesheet cannot cross this component's shadow
+   boundary, so include its button rules here for the internal controls. */
+button.ilw-button {
+    display: inline-block;
+    margin: 6px 0;
+    padding: 12px 20px;
+    color: var(--ilw-color--control-text, var(--ilw-image-gallery--button-color));
+    background: var(--ilw-color--control, var(--ilw-image-gallery--button-background));
+    border: 2px solid var(--ilw-color--control-text, var(--ilw-image-gallery--button-color));
+    border-radius: 0.25em;
+    font: 700 1.188rem/1.25rem var(--il-font-sans, Arial, sans-serif);
+    letter-spacing: 0.01em;
+    text-align: center;
+    text-decoration: none;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.gallery-controls button:hover:not(:disabled) {
+button.ilw-button:hover:not(:disabled) {
+    color: var(--ilw-color--control, var(--ilw-image-gallery--button-background));
+    background: var(--ilw-color--control-text, var(--ilw-image-gallery--button-color));
+    border-color: var(--ilw-color--control-text, var(--ilw-image-gallery--button-color));
     text-decoration: underline;
 }
 
-.gallery-controls button:focus-visible {
-    outline: 3px solid var(--ilw-color--focus--outline, var(--il-orange, #ff5f05));
-    outline-offset: 2px;
+button.ilw-button:focus {
+    color: var(--ilw-color--focus--text, var(--il-blue, #13294b));
+    background: var(--ilw-color--focus--background, var(--il-orange, #ff5f05));
+    text-decoration: underline;
 }
 
-.gallery-controls button:disabled {
-    color: var(--ilw-image-gallery--button-disabled-color);
-    background: var(--ilw-image-gallery--button-disabled-background);
-    cursor: not-allowed;
-    opacity: 0.65;
+button.ilw-button:disabled,
+button.ilw-button:disabled:hover {
+    color: var(--il-storm-lighter-1, var(--ilw-image-gallery--button-disabled-color));
+    background: #fff;
+    border: 2px solid var(--il-storm-lighter-1, var(--ilw-image-gallery--button-disabled-background));
+    outline: none;
+    text-decoration: none;
+    cursor: initial;
 }
 
 .gallery-position {
     margin: 0;
     text-align: center;
-    font: 700 1rem var(--il-font-sans, Arial, sans-serif);
+    font: 400 1.125rem/1.667rem var(--il-font-sans);
 }
 
 @media (max-width: 600px) {
