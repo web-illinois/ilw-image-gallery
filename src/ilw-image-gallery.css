@@ -13,6 +13,11 @@
         line-height: 1.667rem;
     }
 
+    ilw-image-gallery:not([caption="true"]) [data-gallery-item] ilw-card > :not([slot]) {
+        display: none;
+    }
+
+    ilw-image-gallery:not([caption="true"]) [data-gallery-item] ilw-card,
     ilw-image-gallery [data-gallery-item] ilw-card:not(:has(> :not([slot]))) {
         --ilw-card--content-padding-top: 0;
         --ilw-card--content-padding-right: 0;

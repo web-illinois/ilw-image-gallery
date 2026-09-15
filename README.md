@@ -10,7 +10,7 @@ The image gallery provides a thumbnail display of images in a grid. When you cli
 ## Code Examples
 
 ```html
-<ilw-image-gallery label="Campus photo gallery">
+<ilw-image-gallery label="Campus photo gallery" caption="true">
  <ilw-grid>
     <a
       data-gallery-item
@@ -39,8 +39,12 @@ The full-size image comes from each gallery item's `href`. Use `data-gallery-alt
 for its alternative text and `data-gallery-caption` when the modal caption should
 differ from the card text. Previous and Next stop at the ends of the gallery.
 
+Thumbnail captions are hidden by default. Add `caption="true"` to the gallery to
+display them beneath the thumbnails. Captions are displayed in the modal whether
+or not the `caption` attribute is enabled. Don't include captions in your html markup if you don't want any captions on the modal.
+
 The gallery creates one shared modal internally. It also supports Left and Right
-Arrow navigation while the modal is open; Escape closes it and returns focus to
+navigation while the modal is open; Escape closes it and returns focus to
 the thumbnail that opened it.
 
 Inside the modal, each full-size image and its caption are rendered together as a

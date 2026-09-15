@@ -33,6 +33,15 @@
                 "orange",
                 "white"
             ]
+        },
+        {
+            "name": "caption",
+            "description": "Display captions beneath gallery thumbnails. Captions are always displayed in the modal.",
+            "depreciated": false,
+            "values": [
+                "",
+                "true"
+            ]
         }
     ],
     "classes-fixed": [],
