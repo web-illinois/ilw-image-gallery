@@ -13,6 +13,13 @@
         line-height: 1.667rem;
     }
 
+    ilw-image-gallery [data-gallery-item] ilw-card:not(:has(> :not([slot]))) {
+        --ilw-card--content-padding-top: 0;
+        --ilw-card--content-padding-right: 0;
+        --ilw-card--content-padding-bottom: 0;
+        --ilw-card--content-padding-left: 0;
+    }
+
     ilw-image-gallery [data-gallery-item]:focus-visible {
         outline: 3px solid var(--ilw-color--focus--outline, var(--il-blue, #13294b));
         outline-offset: 3px;
