@@ -13,6 +13,10 @@
         line-height: 1.667rem;
     }
 
+    ilw-image-gallery[no-border="true"] [data-gallery-item] ilw-card {
+        border: 0;
+    }
+
     ilw-image-gallery:not([caption="true"]) [data-gallery-item] ilw-card > :not([slot]) {
         display: none;
     }

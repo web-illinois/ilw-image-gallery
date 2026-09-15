@@ -43,6 +43,9 @@ Thumbnail captions are hidden by default. Add `caption="true"` to the gallery to
 display them beneath the thumbnails. Captions are displayed in the modal whether
 or not the `caption` attribute is enabled. Don't include captions in your html markup if you don't want any captions on the modal.
 
+Cards display their standard border by default. Add `no-border="true"` to the
+gallery to hide the border on every card in the gallery.
+
 The gallery creates one shared modal internally. It also supports Left and Right
 navigation while the modal is open; Escape closes it and returns focus to
 the thumbnail that opened it.

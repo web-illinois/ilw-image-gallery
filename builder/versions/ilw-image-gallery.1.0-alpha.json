@@ -42,6 +42,15 @@
                 "",
                 "true"
             ]
+        },
+        {
+            "name": "no-border",
+            "description": "Hide the border around gallery cards.",
+            "depreciated": false,
+            "values": [
+                "",
+                "true"
+            ]
         }
     ],
     "classes-fixed": [],
