@@ -39,11 +39,11 @@ export default class ImageGallery extends LitElement {
 
     override connectedCallback(): void {
         super.connectedCallback();
-        document.addEventListener("keydown", this.handleKeydown);
+        document.addEventListener("keydown", this.handleKeydown, true);
     }
 
     override disconnectedCallback(): void {
-        document.removeEventListener("keydown", this.handleKeydown);
+        document.removeEventListener("keydown", this.handleKeydown, true);
         super.disconnectedCallback();
     }
 
@@ -103,10 +103,12 @@ export default class ImageGallery extends LitElement {
             event.ctrlKey || event.metaKey
         ) return;
 
-        const target = event.target as HTMLElement | null;
-        if (target?.matches("input, textarea, select, [contenteditable]")) return;
+        const target = event.target;
+        if (target instanceof Element && target.matches("input, textarea, select, [contenteditable]")) return;
 
-        if (event.key === "ArrowLeft") {
+        if (event.key === "Tab") {
+            this.moveFocus(event);
+        } else if (event.key === "ArrowLeft") {
             event.preventDefault();
             this.previous();
         } else if (event.key === "ArrowRight") {
@@ -114,6 +116,29 @@ export default class ImageGallery extends LitElement {
             this.next();
         }
     };
+
+    private moveFocus(event: KeyboardEvent): void {
+        const controls = Array.from(
+            this.shadowRoot?.querySelectorAll<HTMLButtonElement>(".gallery-controls button") ?? [],
+        ).filter((button) => !button.disabled);
+        const closeButton = this.modal?.shadowRoot?.querySelector<HTMLButtonElement>(".close-btn");
+        const focusable = closeButton ? [...controls, closeButton] : controls;
+        if (!focusable.length) return;
+
+        event.preventDefault();
+        event.stopImmediatePropagation();
+
+        let activeElement: Element | null = document.activeElement;
+        while (activeElement?.shadowRoot?.activeElement) {
+            activeElement = activeElement.shadowRoot.activeElement;
+        }
+
+        const currentIndex = focusable.indexOf(activeElement as HTMLButtonElement);
+        const nextIndex = event.shiftKey
+            ? (currentIndex <= 0 ? focusable.length - 1 : currentIndex - 1)
+            : (currentIndex + 1) % focusable.length;
+        focusable[nextIndex].focus();
+    }
 
     public previous(): void {
         this.move(-1);
