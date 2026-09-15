@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Image Gallery Component</title>
     <link rel="stylesheet" href="https://cdn.brand.illinois.edu/illinois.css">
-    <link rel="stylesheet" href="https://dev.toolkit.illinois.edu/ilw-global/3.0.0-alpha/ilw-global.css">
+    <link rel="stylesheet" href="https://dev.toolkit.illinois.edu/latest/toolkit.css">
     <script type="module" src="/src/ilw-image-gallery.ts"></script>
+
 </head>
 
 <body style="margin: 0 auto; padding: 2rem 0;">
-    <ilw-image-gallery label="Campus photo gallery">
-        <ilw-grid width="page">
+    <ilw-image-gallery label="Campus photo gallery" caption="true">
+        <ilw-grid width="page" gap="30px">
             <a data-gallery-item href="https://picsum.photos/id/13/2500/1667"
                 data-gallery-alt="A beach with pine trees in the distance">
                 <ilw-card aspectratio="16/10">
