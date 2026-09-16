@@ -26,6 +26,16 @@
 }
 
 .gallery-modal {
+    /* The gallery theme applies to the thumbnail region, but the modal should
+       retain the toolkit's default white theme. */
+    --ilw-color--background: var(--ilw-color--white--background, #fff);
+    --ilw-color--text: var(--ilw-color--white--text, #252525);
+    --ilw-color--heading: var(--ilw-color--white--heading, var(--il-blue, #13294b));
+    --ilw-color--control: var(--ilw-color--white--control, #fff);
+    --ilw-color--control-text: var(--ilw-color--white--control-text, var(--il-blue, #13294b));
+    --ilw-color--control-accent: var(--ilw-color--white--control-accent, var(--il-orange, #ff5f05));
+    --ilw-color--control-accent-text: var(--ilw-color--white--control-accent-text, #fff);
+    --ilw-image-gallery--image-background: var(--ilw-color--white--background, #fff);
     --ilw-modal--image-height: auto;
     --ilw-modal--large: var(--ilw-image-gallery--modal-width);
     --ilw-modal--background: var(--ilw-color--background, #fff);
