@@ -11,7 +11,7 @@ The image gallery provides a thumbnail display of images in a grid. When you cli
 
 ```html
 <ilw-image-gallery label="Campus photo gallery" caption="true">
- <ilw-grid>
+ <ilw-grid padding="0">
     <a
       data-gallery-item
       href="/images/photo-1-large.jpg"
@@ -56,6 +56,12 @@ semantic `figure` and `figcaption`.
 The modal defaults to a maximum width of `900px`. Override
 `--ilw-image-gallery--modal-width` on the gallery when a different maximum is
 needed. Images retain their natural proportions instead of stretching or cropping.
+
+The gallery provides `40px` of top and bottom padding by default. Its padding can
+be adjusted independently with `--ilw-image-gallery--padding-top`,
+`--ilw-image-gallery--padding-right`, `--ilw-image-gallery--padding-bottom`, and
+`--ilw-image-gallery--padding-left`. Set the nested grid's `padding` attribute to
+`0` so its default bottom padding does not stack with the gallery padding.
 
 ## Accessibility Notes and Use
 
