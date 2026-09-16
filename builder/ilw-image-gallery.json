@@ -1,12 +1,17 @@
 {
     "title": "Image Gallery",
-    "tag": "ilw-image-gallery",
-    "github": "https://github.com/web-illinois/ilw-image-gallery/",
-    "type": "web component",
-    "element-name": "ilw-image-gallery",
-    "description": "Description for builder.",
-    "purpose": "Imperative mood purpose for builder homepage.",
-    "toolkit-version": "",
-    "production-version": "",
-    "development-version": "1.0-alpha"
+    "id": "ilw-image-gallery",
+    "type": "Web Component",
+    "repository-name": "ilw-image-gallery",
+    "description": "The image gallery provides a thumbnail display of images in a grid. When you click on an image, a modal will open to display the image larger and allow you to advance to the next image.",
+    "purpose": "Thumbnail display of images in a grid",
+    "customtemplates": [],
+    "versions": [
+        {
+            "name": "1.0-alpha",
+            "notes": "",
+            "template": "1.0-alpha"
+
+        }
+    ]
 }

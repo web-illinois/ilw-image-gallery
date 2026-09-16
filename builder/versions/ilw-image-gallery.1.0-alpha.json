@@ -1,23 +1,41 @@
 {
-    "title": "Image Gallery",
-    "tag": "ilw-image-gallery",
-    "github": "https://github.com/web-illinois/ilw-image-gallery/",
-    "type": "web component",
-    "element-name": "ilw-image-gallery",
-    "description": "Description for builder.",
-    "builder-version": "1.0-alpha",
-    "version": "1.0.0-alpha",
-    "date": "09/02/2026",
-    "css": "https://dev.toolkit.illinois.edu/ilw-image-gallery/1.0.0-alpha/ilw-image-gallery.css",
-    "js": "https://dev.toolkit.illinois.edu/ilw-image-gallery/1.0.0-alpha/ilw-image-gallery.js",
-    "production": false,
+    "template": "1.0-alpha",
+    "id": "ilw-image-gallery",
     "notes": "",
-    "parent-style": "",
+    "usejs": true,
+    "usecss": true,
+    "builder-information": {
+        "element-name": "ilw-image-gallery",
+        "addon-html": "",
+        "parent-style": ""
+
+    },
+    "added-components": [
+        {
+            "name": "ilw-grid",
+            "description": "Grid component used for the image gallery layout.",
+            "link": "https://builder3.toolkit.illinois.edu/component/ilw-grid/index.html",
+            "css": "https://cdn.toolkit.illinois.edu/ilw-grid/1.2/ilw-grid.css",
+            "js": "https://cdn.toolkit.illinois.edu/ilw-grid/1.2/ilw-grid.js"
+        },
+        {
+            "name": "ilw-card",
+            "description": "Card component used for individual gallery items.",
+            "link": "https://builder3.toolkit.illinois.edu/component/ilw-card/index.html",
+            "css": "https://cdn.toolkit.illinois.edu/ilw-card/1.3/ilw-card.css",
+            "js": "https://cdn.toolkit.illinois.edu/ilw-card/1.3/ilw-card.js"
+        }
+    ],
     "samples": [
         {
             "name": "default",
             "description": "Default information",
-            "text": "<p>Lorem ipsum</p>"
+            "text": "<ilw-grid width=\"page\" gap=\"25px\" padding=\"0\"><a data-gallery-item href=\"https://picsum.photos/id/13/2500/1667\" data-gallery-alt=\"A beach with pine trees in the distance\">\n<ilw-card aspectratio=\"16/10\">\n<img src=\"https://picsum.photos/id/13/570/300\" alt=\"\" slot=\"image\">\n<p>A beach with pine trees in the distance</p>\n</ilw-card>\n</a>\n\n            <a data-gallery-item href=\"https://picsum.photos/id/16/2500/1667\" data-gallery-alt=\"A rocky shoreline beneath a cloudy sky\">\n                <ilw-card aspectratio=\"16/10\">\n                    <img src=\"https://picsum.photos/id/16/570/300\" alt=\"\" slot=\"image\">\n                    <p>A rocky shoreline beneath a cloudy sky</p>\n                </ilw-card>\n            </a>\n\n            <a data-gallery-item href=\"https://picsum.photos/id/18/2500/1667\" data-gallery-alt=\"Tall grass overlooking the ocean\">\n                <ilw-card aspectratio=\"16/10\">\n                    <img src=\"https://picsum.photos/id/18/570/300\" alt=\"\" slot=\"image\">\n                    <p>Tall grass overlooking the ocean</p>\n                </ilw-card>\n            </a>\n        </ilw-grid>"
+        },
+        {
+            "name": "no-caption",
+            "description": "Gallery without captions",
+            "text": "<ilw-grid width=\"page\" gap=\"25px\" padding=\"0\"><a data-gallery-item href=\"https://picsum.photos/id/13/2500/1667\" data-gallery-alt=\"A beach with pine trees in the distance\">\n<ilw-card aspectratio=\"16/10\">\n<img src=\"https://picsum.photos/id/13/570/300\" alt=\"\" slot=\"image\">\n</ilw-card>\n</a>\n\n            <a data-gallery-item href=\"https://picsum.photos/id/16/2500/1667\" data-gallery-alt=\"A rocky shoreline beneath a cloudy sky\">\n                <ilw-card aspectratio=\"16/10\">\n                    <img src=\"https://picsum.photos/id/16/570/300\" alt=\"\" slot=\"image\">\n                </ilw-card>\n            </a>\n\n            <a data-gallery-item href=\"https://picsum.photos/id/18/2500/1667\" data-gallery-alt=\"Tall grass overlooking the ocean\">\n                <ilw-card aspectratio=\"16/10\">\n                    <img src=\"https://picsum.photos/id/18/570/300\" alt=\"\" slot=\"image\">\n                </ilw-card>\n            </a>\n        </ilw-grid>"
         }
     ],
     "attributes-fixed": [],
@@ -29,9 +47,7 @@
             "depreciated": false,
             "values": [
                 "",
-                "blue",
-                "orange",
-                "white"
+                "blue"
             ]
         },
         {
