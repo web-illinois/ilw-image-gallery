@@ -8,6 +8,7 @@
     ilw-image-gallery [data-gallery-item] ilw-card {
         --ilw-card--content-padding-top: 1rem;
         --ilw-card--font-size: 1.125rem;
+        height: 100%;
         font-family: var(--il-font-sans, Arial, sans-serif);
         font-weight: 400;
         line-height: 1.667rem;
@@ -15,6 +16,10 @@
 
     ilw-image-gallery[no-border="true"] [data-gallery-item] ilw-card {
         border: 0;
+    }
+
+    ilw-image-gallery[theme="blue"] [data-gallery-item] ilw-card {
+        border: 1px solid white;
     }
 
     ilw-image-gallery:not([caption="true"]) [data-gallery-item] ilw-card > :not([slot]) {
