@@ -8,11 +8,21 @@
         --ilw-image-gallery--image-background: var(--ilw-color--background, #fff);
         --ilw-image-gallery--image-max-height: calc(80dvh - 12rem);
         --ilw-image-gallery--modal-width: 900px;
+        --ilw-image-gallery--padding-top: 40px;
+        --ilw-image-gallery--padding-right: 0;
+        --ilw-image-gallery--padding-bottom: 40px;
+        --ilw-image-gallery--padding-left: 0;
     }
 }
 
 :host {
     display: block;
+    box-sizing: border-box;
+    background-color: var(--ilw-color--background, #fff);
+    padding: var(--ilw-image-gallery--padding-top)
+        var(--ilw-image-gallery--padding-right)
+        var(--ilw-image-gallery--padding-bottom)
+        var(--ilw-image-gallery--padding-left);
 }
 
 .gallery-modal {
