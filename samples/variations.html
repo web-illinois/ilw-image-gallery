@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery Component</title>
+    <link rel="stylesheet" href="https://cdn.brand.illinois.edu/illinois.css">
+    <link rel="stylesheet" href="https://dev.toolkit.illinois.edu/latest/toolkit.css">
+    <script type="module" src="/src/ilw-image-gallery.ts"></script>
+
+</head>
+
+<body style="margin: 0 auto;">
+    <h1>Image gallery variations</h1>
+    <div id="gallery-variations">
+        <ilw-image-gallery id="image-gallery">
+            <ilw-grid width="page" gap="25px" padding="0">
+                <a data-gallery-item href="https://picsum.photos/id/13/2500/1667"
+                    data-gallery-alt="A beach with pine trees in the distance"
+                    aria-label="A beach with pine trees in the distance">
+                    <ilw-card aspectratio="16/10">
+                        <img src="https://picsum.photos/id/13/570/300" alt="" slot="image">
+                        <p>A beach with pine trees in the distance</p>
+                    </ilw-card>
+                </a>
+
+                <a data-gallery-item href="https://picsum.photos/id/16/2500/1667"
+                    data-gallery-alt="A rocky shoreline beneath a cloudy sky"
+                    aria-label="A rocky shoreline beneath a cloudy sky">
+                    <ilw-card aspectratio="16/10">
+                        <img src="https://picsum.photos/id/16/570/300" alt="" slot="image">
+                        <p>A rocky shoreline beneath a cloudy sky</p>
+                    </ilw-card>
+                </a>
+
+                <a data-gallery-item href="https://picsum.photos/id/18/2500/1667"
+                    data-gallery-alt="Tall grass overlooking the ocean"
+                    aria-label="Tall grass overlooking the ocean">
+                    <ilw-card aspectratio="16/10">
+                        <img src="https://picsum.photos/id/18/570/300" alt="" slot="image">
+                        <p>Tall grass overlooking the ocean</p>
+                    </ilw-card>
+                </a>
+            </ilw-grid>
+        </ilw-image-gallery>
+
+        <ilw-image-gallery id="image-gallery-no-caption">
+            <ilw-grid width="page" gap="25px" padding="0">
+                <a data-gallery-item href="https://picsum.photos/id/13/2500/1667"
+                    data-gallery-alt="A beach with pine trees in the distance"
+                    aria-label="A beach with pine trees in the distance">
+                    <ilw-card aspectratio="16/10">
+                        <img src="https://picsum.photos/id/13/570/300" alt="" slot="image">
+                    </ilw-card>
+                </a>
+
+                <a data-gallery-item href="https://picsum.photos/id/16/2500/1667"
+                    data-gallery-alt="A rocky shoreline beneath a cloudy sky"
+                    aria-label="A rocky shoreline beneath a cloudy sky">
+                    <ilw-card aspectratio="16/10">
+                        <img src="https://picsum.photos/id/16/570/300" alt="" slot="image">
+                    </ilw-card>
+                </a>
+
+                <a data-gallery-item href="https://picsum.photos/id/18/2500/1667"
+                    data-gallery-alt="Tall grass overlooking the ocean"
+                    aria-label="Tall grass overlooking the ocean">
+                    <ilw-card aspectratio="16/10">
+                        <img src="https://picsum.photos/id/18/570/300" alt="" slot="image">
+                    </ilw-card>
+                </a>
+            </ilw-grid>
+        </ilw-image-gallery>
+    </div>
+
+    <script type="module">
+        import { createVariations } from "@illinois-toolkit/ilw-core";
+        import ImageGallery from "../src/ilw-image-gallery.ts";
+
+        const variations = document.getElementById("gallery-variations");
+        const baseGalleryIds = ["image-gallery", "image-gallery-no-caption"];
+
+        createVariations(variations, ImageGallery, {
+            theme: [undefined, "blue"],
+            caption: [undefined, "true"],
+            "no-border": [undefined, "true"],
+        }, baseGalleryIds);
+
+        baseGalleryIds.forEach((id) => document.getElementById(id).remove());
+        variations.querySelectorAll("ilw-image-gallery").forEach((gallery) => {
+            const markup = gallery.querySelector("ilw-card > :not([slot])")
+                ? "Captioned markup"
+                : "No-caption markup";
+            const theme = gallery.getAttribute("theme") || "default";
+            const captions = gallery.getAttribute("caption") === "true" ? "on" : "off";
+            const borders = gallery.getAttribute("no-border") === "true" ? "off" : "on";
+            const description = `${markup}: theme ${theme}, captions ${captions}, borders ${borders}`;
+            const heading = document.createElement("h2");
+
+            heading.textContent = description;
+            gallery.before(heading);
+            gallery.setAttribute("label", description);
+        });
+    </script>
+</body>
+
+</html>
