@@ -1,10 +1,17 @@
 {
     "name": "@illinois-toolkit/ilw-image-gallery",
     "description": "An image gallery with modal viewing and previous/next navigation.",
-    "repository": "github:web-illinois/ilw-image-gallery",
+    "publishConfig": {
+        "access": "public",
+        "tag": "alpha"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/web-illinois/ilw-image-gallery.git"
+    },
     "private": false,
     "license": "MIT",
-    "version": "1.0.1-alpha",
+    "version": "1.0.2-alpha",
     "type": "module",
     "files": [
         "src/**",
