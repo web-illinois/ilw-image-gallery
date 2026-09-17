@@ -18,7 +18,7 @@
         border: 0;
     }
 
-    ilw-image-gallery[theme="blue"] [data-gallery-item] ilw-card {
+    ilw-image-gallery[theme="blue"]:not([no-border="true"]) [data-gallery-item] ilw-card {
         border: 1px solid white;
     }
 
