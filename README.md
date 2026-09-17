@@ -8,7 +8,7 @@ Links: **[ilw-image-gallery in Builder](https://builder3.toolkit.illinois.edu/co
 
 The image gallery provides a thumbnail display of images in a grid. When you click on an image, a modal will open to display the image larger and allow you to advance to the next image. The image gallery uses `ilw-grid` and `ilw-card` for the image thumbnail layout.
 ## Code Examples
-
+Image Gallery with captions in the gallery and the modal
 ```html
 <ilw-image-gallery label="Campus photo gallery" caption="true">
  <ilw-grid padding="0">
@@ -31,8 +31,67 @@ The image gallery provides a thumbnail display of images in a grid. When you cli
 
     <!-- Additional items -->
   </ilw-grid>
-
 </ilw-image-gallery>
+```
+Image Gallery with no captions in the gallery or modal
+```html
+<ilw-image-gallery label="Campus photo gallery" theme="blue">
+  <ilw-grid width="page" gap="25px" padding="0">
+    <a data-gallery-item href="https://picsum.photos/id/13/2500/1667"
+        data-gallery-alt="A beach with pine trees in the distance"
+        aria-label="A beach with pine trees in the distance">
+        <ilw-card aspectratio="16/10">
+            <img src="https://picsum.photos/id/13/570/300" alt="" slot="image">
+        </ilw-card>
+    </a>
+
+    <a data-gallery-item href="https://picsum.photos/id/16/2500/1667"
+        data-gallery-alt="A rocky shoreline beneath a cloudy sky"
+        aria-label="A rocky shoreline beneath a cloudy sky">
+        <ilw-card aspectratio="16/10">
+            <img src="https://picsum.photos/id/16/570/300" alt="" slot="image">
+        </ilw-card>
+    </a>
+
+    <a data-gallery-item href="https://picsum.photos/id/18/2500/1667"
+        data-gallery-alt="Tall grass overlooking the ocean"
+        aria-label="Tall grass overlooking the ocean">
+        <ilw-card aspectratio="16/10">
+            <img src="https://picsum.photos/id/18/570/300" alt="" slot="image">
+        </ilw-card>
+    </a>
+  </ilw-grid>
+ </ilw-image-gallery>
+```
+Image Gallery with caption in modal only
+```html
+ <ilw-image-gallery label="Campus photo gallery">
+    <ilw-grid width="page" gap="25px" padding="0">
+        <a data-gallery-item href="https://picsum.photos/id/13/2500/1667"
+            data-gallery-alt="A beach with pine trees in the distance">
+            <ilw-card aspectratio="16/10">
+                <img src="https://picsum.photos/id/13/570/300" alt="" slot="image">
+                <p>A beach with pine trees in the distance</p>
+            </ilw-card>
+        </a>
+
+        <a data-gallery-item href="https://picsum.photos/id/16/2500/1667"
+            data-gallery-alt="A rocky shoreline beneath a cloudy sky">
+            <ilw-card aspectratio="16/10">
+                <img src="https://picsum.photos/id/16/570/300" alt="" slot="image">
+                <p>A rocky shoreline beneath a cloudy sky</p>
+            </ilw-card>
+        </a>
+
+        <a data-gallery-item href="https://picsum.photos/id/18/2500/1667"
+            data-gallery-alt="Tall grass overlooking the ocean">
+            <ilw-card aspectratio="16/10">
+                <img src="https://picsum.photos/id/18/570/300" alt="" slot="image">
+                <p>Tall grass overlooking the ocean</p>
+            </ilw-card>
+        </a>
+    </ilw-grid>
+  </ilw-image-gallery>
 ```
 
 The full-size image comes from each gallery item's `href`. Use `data-gallery-alt`
@@ -67,9 +126,10 @@ be adjusted independently with `--ilw-image-gallery--padding-top`,
 
 - Give the gallery a concise `label` that identifies the image collection.
 - Use meaningful `data-gallery-alt` text for informative images.
-- Keep the thumbnail image's `alt` empty when the surrounding link and card text
+- Keep the thumbnail image's `alt` empty when the surrounding link and caption text
   already provide its accessible name.
 - Gallery items must be anchors so they remain keyboard accessible and open the
   full-size image normally when JavaScript is unavailable.
+- Add `aria-label` to the link when there is no caption on the image gallery so that the link has an accessible name 
 
 ## External References
