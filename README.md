@@ -11,13 +11,13 @@ The image gallery provides a thumbnail display of images in a grid. When you cli
 Image Gallery with captions in the gallery and the modal
 ```html
 <ilw-image-gallery label="Campus photo gallery" caption="true">
- <ilw-grid padding="0">
+ <ilw-grid width="page" gap="25px" padding="0">
     <a
       data-gallery-item
       href="/images/photo-1-large.jpg"
       data-gallery-alt="A boathouse beside the lake at night"
     >
-      <ilw-card aspectratio="4/3">
+      <ilw-card aspectratio="16/10">
         <img
           slot="image"
           src="/images/photo-1-thumbnail.jpg"
@@ -44,22 +44,8 @@ Image Gallery with no captions in the gallery or modal
             <img src="https://picsum.photos/id/13/570/300" alt="" slot="image">
         </ilw-card>
     </a>
-
-    <a data-gallery-item href="https://picsum.photos/id/16/2500/1667"
-        data-gallery-alt="A rocky shoreline beneath a cloudy sky"
-        aria-label="A rocky shoreline beneath a cloudy sky">
-        <ilw-card aspectratio="16/10">
-            <img src="https://picsum.photos/id/16/570/300" alt="" slot="image">
-        </ilw-card>
-    </a>
-
-    <a data-gallery-item href="https://picsum.photos/id/18/2500/1667"
-        data-gallery-alt="Tall grass overlooking the ocean"
-        aria-label="Tall grass overlooking the ocean">
-        <ilw-card aspectratio="16/10">
-            <img src="https://picsum.photos/id/18/570/300" alt="" slot="image">
-        </ilw-card>
-    </a>
+    <!-- Additional items -->
+   
   </ilw-grid>
  </ilw-image-gallery>
 ```
@@ -74,22 +60,8 @@ Image Gallery with caption in modal only
                 <p>A beach with pine trees in the distance</p>
             </ilw-card>
         </a>
+    <!-- Additional items -->
 
-        <a data-gallery-item href="https://picsum.photos/id/16/2500/1667"
-            data-gallery-alt="A rocky shoreline beneath a cloudy sky">
-            <ilw-card aspectratio="16/10">
-                <img src="https://picsum.photos/id/16/570/300" alt="" slot="image">
-                <p>A rocky shoreline beneath a cloudy sky</p>
-            </ilw-card>
-        </a>
-
-        <a data-gallery-item href="https://picsum.photos/id/18/2500/1667"
-            data-gallery-alt="Tall grass overlooking the ocean">
-            <ilw-card aspectratio="16/10">
-                <img src="https://picsum.photos/id/18/570/300" alt="" slot="image">
-                <p>Tall grass overlooking the ocean</p>
-            </ilw-card>
-        </a>
     </ilw-grid>
   </ilw-image-gallery>
 ```
@@ -100,14 +72,10 @@ differ from the card text. Previous and Next stop at the ends of the gallery.
 
 Thumbnail captions are hidden by default. Add `caption="true"` to the gallery to
 display them beneath the thumbnails. Captions are displayed in the modal whether
-or not the `caption` attribute is enabled. Don't include captions in your html markup if you don't want any captions on the modal.
+or not the `caption` attribute is enabled. Don't include captions in your html markup if you don't want any captions in the modal.
 
 Cards display their standard border by default. Add `no-border="true"` to the
 gallery to hide the border on every card in the gallery.
-
-The gallery creates one shared modal internally. It also supports Left and Right
-navigation while the modal is open; Escape closes it and returns focus to
-the thumbnail that opened it.
 
 Inside the modal, each full-size image and its caption are rendered together as a
 semantic `figure` and `figcaption`.
@@ -131,5 +99,3 @@ be adjusted independently with `--ilw-image-gallery--padding-top`,
 - Gallery items must be anchors so they remain keyboard accessible and open the
   full-size image normally when JavaScript is unavailable.
 - Add `aria-label` to the link when there is no caption on the image gallery so that the link has an accessible name 
-
-## External References

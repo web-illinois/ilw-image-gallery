@@ -6,7 +6,6 @@
         --ilw-image-gallery--button-disabled-background: #d7d7d7;
         --ilw-image-gallery--button-disabled-color: #333;
         --ilw-image-gallery--image-background: var(--ilw-color--background, #fff);
-        --ilw-image-gallery--image-max-height: calc(80dvh - 12rem);
         --ilw-image-gallery--modal-width: 900px;
         --ilw-image-gallery--padding-top: 40px;
         --ilw-image-gallery--padding-right: 0;
@@ -56,7 +55,6 @@
     display: block;
     width: 100%;
     height: auto !important;
-    /*max-height: var(--ilw-image-gallery--image-max-height);*/
     object-fit: contain !important;
     background: var(--ilw-image-gallery--image-background);
     border-bottom: var(--ilw-modal--border-bottom);
