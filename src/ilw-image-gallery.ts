@@ -1,5 +1,6 @@
 import { LitElement, html, unsafeCSS } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
+import { keyed } from "lit/directives/keyed.js";
 // @ts-ignore
 import styles from "./ilw-image-gallery.styles.css?inline";
 import "./ilw-image-gallery.css";
@@ -30,6 +31,9 @@ export default class ImageGallery extends LitElement {
 
     @state()
     private currentIndex = -1;
+
+    @state()
+    private loadedImageSrc = "";
 
     private readonly modalId = `ilw-image-gallery-modal-${++galleryId}`;
 
@@ -90,6 +94,7 @@ export default class ImageGallery extends LitElement {
         if (index === -1) return;
 
         event.preventDefault();
+        if (index !== this.currentIndex) this.loadedImageSrc = "";
         this.currentIndex = index;
 
         // ilw-modal uses this attribute to open and remember the trigger so it
@@ -155,12 +160,24 @@ export default class ImageGallery extends LitElement {
         const nextIndex = this.currentIndex + change;
         if (nextIndex < 0 || nextIndex >= count) return;
 
+        this.loadedImageSrc = "";
         this.currentIndex = nextIndex;
+    }
+
+    private handleImageLoad(event: Event): void {
+        const loadedImage = event.currentTarget as HTMLImageElement;
+        const currentImage = this.imageAt(this.currentIndex);
+
+        // Ignore a late event from an image that is no longer selected.
+        if (currentImage && loadedImage.src === currentImage.src) {
+            this.loadedImageSrc = currentImage.src;
+        }
     }
 
     protected override render() {
         const count = this.items.length;
         const image = this.imageAt(this.currentIndex);
+        const imageLoaded = image?.src === this.loadedImageSrc;
         const atStart = this.currentIndex <= 0;
         const atEnd = this.currentIndex >= count - 1;
 
@@ -172,7 +189,12 @@ export default class ImageGallery extends LitElement {
             <ilw-modal id=${this.modalId} size="large" class="gallery-modal">
                 ${image ? html`
                     <figure class="gallery-figure" slot="image">
-                        <img class="gallery-image" src=${image.src} alt=${image.alt} />
+                        <div class="gallery-image-stage">
+                            ${keyed(image.src, html`
+                                <img class="gallery-image" src=${image.src} alt=${image.alt}
+                                    ?data-loaded=${imageLoaded} @load=${this.handleImageLoad} />
+                            `)}
+                        </div>
                         ${image.caption
                             ? html`<figcaption>${image.caption}</figcaption>`
                             : null}
