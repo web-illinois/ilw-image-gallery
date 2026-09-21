@@ -4,12 +4,6 @@ import { keyed } from "lit/directives/keyed.js";
 // @ts-ignore
 import styles from "./ilw-image-gallery.styles.css?inline";
 import "./ilw-image-gallery.css";
-import "@illinois-toolkit/ilw-card";
-import "@illinois-toolkit/ilw-card/ilw-card.css";
-import "@illinois-toolkit/ilw-grid";
-import "@illinois-toolkit/ilw-grid/ilw-grid.css";
-import "@illinois-toolkit/ilw-modal";
-import "@illinois-toolkit/ilw-modal/ilw-modal.css";
 
 type GalleryModal = HTMLElement & { open: boolean };
 
