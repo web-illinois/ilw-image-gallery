@@ -24,6 +24,13 @@
             "link": "https://builder3.toolkit.illinois.edu/component/ilw-card/index.html",
             "css": "https://cdn.toolkit.illinois.edu/ilw-card/1.3/ilw-card.css",
             "js": "https://cdn.toolkit.illinois.edu/ilw-card/1.3/ilw-card.js"
+        },
+        {
+            "name": "ilw-modal",
+            "description": "Modal component to highlight an image.",
+            "link": "https://builder3.toolkit.illinois.edu/component/ilw-modal/index.html",
+            "css": "https://cdn.toolkit.illinois.edu/ilw-modal/1/ilw-card.css",
+            "js": "https://cdn.toolkit.illinois.edu/ilw-modal/1/ilw-modal.js"
         }
     ],
     "samples": [
