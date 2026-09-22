@@ -6,6 +6,7 @@
     "description": "The image gallery provides a thumbnail display of images in a grid. When you click on an image, a modal will open to display the image larger and allow you to advance to the next image.",
     "purpose": "Thumbnail display of images in a grid",
     "customtemplates": [],
+    "devonly": true,
     "versions": [
         {
             "name": "1.0-alpha",
