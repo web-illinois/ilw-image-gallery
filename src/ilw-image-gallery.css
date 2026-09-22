@@ -23,7 +23,7 @@
     }
 
     ilw-image-gallery:not([caption="true"]) [data-gallery-item] ilw-card > :not([slot]) {
-        display: none;
+        display: none !important;
     }
 
     ilw-image-gallery:not([caption="true"]) [data-gallery-item] ilw-card,
