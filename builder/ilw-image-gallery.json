@@ -7,12 +7,5 @@
     "purpose": "Thumbnail display of images in a grid",
     "customtemplates": [],
     "devonly": true,
-    "versions": [
-        {
-            "name": "1.0-alpha",
-            "notes": "",
-            "template": "1.0-alpha"
-
-        }
-    ]
+    "versions": []
 }
