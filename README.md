@@ -54,7 +54,8 @@ Image Gallery with caption in modal only
  <ilw-image-gallery label="Campus photo gallery">
     <ilw-grid width="page" gap="25px" padding="0">
         <a data-gallery-item href="https://picsum.photos/id/13/2500/1667"
-            data-gallery-alt="A beach with pine trees in the distance">
+            data-gallery-alt="A beach with pine trees in the distance"
+            aria-label="A beach with pine trees in the distance">
             <ilw-card aspectratio="16/10">
                 <img src="https://picsum.photos/id/13/570/300" alt="" slot="image">
                 <p>A beach with pine trees in the distance</p>
@@ -98,4 +99,4 @@ be adjusted independently with `--ilw-image-gallery--padding-top`,
   already provide its accessible name.
 - Gallery items must be anchors so they remain keyboard accessible and open the
   full-size image normally when JavaScript is unavailable.
-- Add `aria-label` to the link when there is no caption on the image gallery so that the link has an accessible name 
+- Add `aria-label` to each link when thumbnail captions are hidden, even if a caption appears in the modal. 

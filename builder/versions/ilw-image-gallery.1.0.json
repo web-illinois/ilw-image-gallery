@@ -8,7 +8,6 @@
         "element-name": "ilw-image-gallery",
         "addon-html": "",
         "parent-style": ""
-
     },
     "added-components": [
         {
@@ -37,7 +36,7 @@
         {
             "name": "default",
             "description": "Default information",
-            "text": "<ilw-grid width=\"page\" gap=\"25px\" padding=\"0\">\n            <a data-gallery-item href=\"https://picsum.photos/id/13/2500/1667\"\n                data-gallery-alt=\"A beach with pine trees in the distance\">\n                <ilw-card aspectratio=\"16/10\">\n                    <img src=\"https://picsum.photos/id/13/570/300\" alt=\"\" slot=\"image\">\n                    <p>A beach with pine trees in the distance</p>\n                </ilw-card>\n            </a>\n\n            <a data-gallery-item href=\"https://picsum.photos/id/16/2500/1667\"\n                data-gallery-alt=\"A rocky shoreline beneath a cloudy sky\">\n                <ilw-card aspectratio=\"16/10\">\n                    <img src=\"https://picsum.photos/id/16/570/300\" alt=\"\" slot=\"image\">\n                    <p>A rocky shoreline beneath a cloudy sky</p>\n                </ilw-card>\n            </a>\n\n            <a data-gallery-item href=\"https://picsum.photos/id/494/1667/2500\"\n                data-gallery-alt=\"A woman holding a dog on a leash standing under a bridge\">\n                <ilw-card aspectratio=\"16/10\">\n                    <img src=\"https://picsum.photos/id/494/570/300\" alt=\"\" slot=\"image\">\n                    <p>A woman holding a dog on a leash standing under a bridge</p>\n                </ilw-card>\n            </a>\n        </ilw-grid>"
+            "text": "<ilw-grid width=\"page\" gap=\"25px\" padding=\"0\">\n    <a data-gallery-item href=\"https://picsum.photos/id/13/2500/1667\"\n        data-gallery-alt=\"A beach with pine trees in the distance\"\n        aria-label=\"A beach with pine trees in the distance\">\n        <ilw-card aspectratio=\"16/10\">\n            <img src=\"https://picsum.photos/id/13/570/300\" alt=\"\" slot=\"image\">\n            <p>A beach with pine trees in the distance</p>\n        </ilw-card>\n    </a>\n</ilw-grid>"
         },
         {
             "name": "no-caption",
@@ -78,6 +77,5 @@
     ],
     "classes-fixed": [],
     "classes": [],
-    "css-variables": [
-    ]
+    "css-variables": []
 }
