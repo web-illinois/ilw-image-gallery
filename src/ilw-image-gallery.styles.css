@@ -5,7 +5,7 @@
         --ilw-image-gallery--button-color: var(--ilw-color--control-accent-text, #fff);
         --ilw-image-gallery--button-disabled-background: #d7d7d7;
         --ilw-image-gallery--button-disabled-color: #333;
-        --ilw-image-gallery--image-background: var(--ilw-color--background, #fff);
+        --ilw-image-gallery--image-background: #000;
         --ilw-image-gallery--modal-width: 900px;
         --ilw-image-gallery--padding-top: 40px;
         --ilw-image-gallery--padding-right: 0;
@@ -34,7 +34,7 @@
     --ilw-color--control-text: var(--ilw-color--white--control-text, var(--il-blue, #13294b));
     --ilw-color--control-accent: var(--ilw-color--white--control-accent, var(--il-orange, #ff5f05));
     --ilw-color--control-accent-text: var(--ilw-color--white--control-accent-text, #fff);
-    --ilw-image-gallery--image-background: var(--ilw-color--white--background, #fff);
+    --ilw-image-gallery--image-background: #000;
     --ilw-modal--image-height: auto;
     --ilw-modal--large: var(--ilw-image-gallery--modal-width);
     --ilw-modal--background: var(--ilw-color--background, #fff);
@@ -53,6 +53,8 @@
 
 .gallery-image-stage {
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
     place-items: center;
     width: 100%;
     height: clamp(300px, 65vh, 600px);
@@ -63,7 +65,10 @@
 
 .gallery-image {
     display: block;
-    width: 100%;
+    width: auto;
+    max-width: 100%;
+    min-width: 0;
+    min-height: 0;
     height: 100% !important;
     object-fit: contain !important;
     background: var(--ilw-image-gallery--image-background);
